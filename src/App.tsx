@@ -1,6 +1,12 @@
 import { Button } from "./components/ui/button"
+import {BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"
+import Sem1 from "./sem1"
 
-function App() {
+function HomePage() {
+  const navigate = useNavigate()
+  const sem1 = () => {
+    navigate('/sem1')
+  }
 
   return (
     <div>
@@ -8,7 +14,7 @@ function App() {
         <h1 className="text-4xl font-bold">SEM NOTES</h1>
         <div className="flex flex-col items-center justify-center bg-gray-700 h-113 w-80 rounded-[35px] m-8" >
           <div className="flex">
-            <Button className=" bg-gray-600 m-5 rounded-2xl p-8">
+            <Button className=" bg-gray-600 m-5 rounded-2xl p-8" onClick={sem1}>
               SEM 1
             </Button>
             <Button className=" bg-gray-600 m-5 rounded-2xl p-8" >
@@ -42,6 +48,17 @@ function App() {
         </div>
       </div>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/sem1" element={<Sem1 />}></Route>
+      </Routes>
+    </Router>
   )
 }
 
