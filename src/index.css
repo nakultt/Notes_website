@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 #root {
+  position: relative;
+  z-index: 1;
   color: white;
-  background-color: rgb(3 7 18);
+  background-color: transparent;
   min-height: 100vh;
   padding: 1rem;
 }
