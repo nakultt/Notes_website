@@ -11,8 +11,8 @@ function Sem1 () {
     return (
         <div>
             <div className="flex flex-col items-center justify-center">
-                <h1 className="text-4xl font-bold m-3">SEM 1 NOTES</h1>
-                <div className="flex flex-col items-center justify-center bg-gray-700 h-114 w-110 rounded-[35px] m-9">
+                <h1 className="text-4xl font-bold m-3 mt-10">SEM 1 NOTES</h1>
+                <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-114 w-110 rounded-[35px] m-9">
                     <div className="flex">
                         <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={physics}>
                             PHYSICS

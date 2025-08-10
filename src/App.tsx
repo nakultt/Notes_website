@@ -36,11 +36,23 @@ function HomePage() {
   const sem8 = () => {
     navigate('/sem8')
   }
+
+  const discord = () => {
+    window.location.href = "https://discord.gg/TY8f2xAb"
+  }
+
+  const linkedin = () => {
+    window.location.href = "https://www.linkedin.com/in/nakul-t-a222a7328 "
+  }
+
+  const instagram = () => {
+    window.location.href = "https://www.instagram.com/nxkxlt"
+  }
   
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold m-3">SEM NOTES</h1>
+        <h1 className="text-4xl font-bold mt-10">SEM NOTES</h1>
         <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-114 w-81 rounded-[35px] m-9 ">
           <div className="flex">
             <Button className="moving-border-card m-5 p-8" onClick={sem1}>
@@ -73,6 +85,14 @@ function HomePage() {
             <Button className="moving-border-card m-5 p-8" onClick={sem8}>
               SEM 8
             </Button>
+          </div>
+        </div>
+        <div className="flex flex-col m-3 mb-12 justify-center items-center mt-10">
+          <h2 className="text-2xl font-bold m-3">Contact Developer</h2>
+          <div className="flex flex-row">
+            <Button className="bg-indigo-700 m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={discord}>Discord</Button>
+            <Button className="bg-blue-600 m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={linkedin}>LinkedIn</Button>
+            <Button className="bg-[#E1306C] m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={instagram}>Instagram</Button>
           </div>
         </div>
       </div>
