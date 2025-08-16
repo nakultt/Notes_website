@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import { Button } from "./components/ui/button"
 import {BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"
 import Sem1 from "./sems/sem1"
@@ -103,6 +104,7 @@ function HomePage() {
           </div>
         </div>
       </div>
+      <Analytics />
     </div>
   )
 }
