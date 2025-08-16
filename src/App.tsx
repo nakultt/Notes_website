@@ -104,7 +104,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <Analytics />
     </div>
   )
 }
@@ -123,7 +122,9 @@ function App() {
         <Route path="/sem7" element={<Sem7 />}></Route>
         <Route path="/sem8" element={<Sem8 />}></Route>
       </Routes>
+      <Analytics />
     </Router>
+    
   )
 }
 
