@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 import { Button } from "./components/ui/button"
 import {BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"
 import Sem1 from "./sems/sem1"
@@ -11,43 +11,43 @@ import Sem7 from "./sems/sem7"
 import Sem8 from "./sems/sem8"
 
 function HomePage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const sem1 = () => {
-    navigate('/sem1')
+    navigate('/sem1');
   }
   const sem2 = () => {
-    navigate('/sem2')
+    navigate('/sem2');
   }
   const sem3 = () => {
-    navigate('/sem3')
+    navigate('/sem3');
   }
   const sem4 = () => {
-    navigate('/sem4')
+    navigate('/sem4');
   }
   const sem5 = () => {
-    navigate('/sem5')
+    navigate('/sem5');
   }
   const sem6 = () => {
-    navigate('/sem6')
+    navigate('/sem6');
   }
   const sem7 = () => {
-    navigate('/sem7')
+    navigate('/sem7');
   }
   const sem8 = () => {
-    navigate('/sem8')
+    navigate('/sem8');
   }
 
   const discord = () => {
-    window.location.href = "https://discord.gg/TY8f2xAb"
+    window.location.href = "https://discord.gg/TY8f2xAb";
   }
 
   const linkedin = () => {
-    window.location.href = "https://www.linkedin.com/in/nakul-t-a222a7328 "
+    window.location.href = "https://www.linkedin.com/in/nakul-t-a222a7328 ";
   }
 
   const instagram = () => {
-    window.location.href = "https://www.instagram.com/nxkxlt"
+    window.location.href = "https://www.instagram.com/nxkxlt";
   }
   
   return (
@@ -128,4 +128,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
