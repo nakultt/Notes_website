@@ -1,41 +1,53 @@
 import { Button } from "../components/ui/button";
 
 function Sem2 () {
+
+    const algebra = () => {
+        window.open("https://drive.google.com/drive/u/1/folders/1OWNRG15VcpiuVeNdWdsqzwsEgp7a4lkh", "_blank");
+    };
+    const evs = () => {
+        window.open("https://drive.google.com/drive/u/1/folders/1HJAnsMkhZ4YrQyr2eBo2iOQmqlVHsSN9", "_blank");
+    };
+    const materialscience = () => {
+        window.open("https://drive.google.com/drive/u/1/folders/1B6CKR5MDhz4v1ZxCFB44TC5fiBW5ws0F", "_blank");
+    };
+    const python = () => {
+        window.open("https://drive.google.com/drive/u/1/folders/1pilM68Tz2pOywQCrOFl8OHcRtUPcXegz", "_blank");
+    };
+    const de = () => {
+        window.open("https://drive.google.com/drive/u/1/folders/1fhR5aVLdbMkDKLJIDooq95Y-pwJU_oyQ", "_blank");
+    };
+    const questions = () => {
+        window.open("https://drive.google.com/drive/u/1/folders/1U3PGrPKGKrIOzZ7LCqw0gekrKpLbbWru", "_blank");
+    };
+
     return (
         <div>
             <div className="flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-bold m-3 mt-10">SEM 2 NOTES</h1>
-                <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-114 w-110 rounded-[35px] m-9">
+                <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-93 w-110 rounded-[35px] m-9">
                     <div className="flex">
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            PHYSICS
+                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={algebra}>
+                            ALGEBRA
                         </Button>
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            CHEMISTRY
+                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={evs}>
+                            EVS
                         </Button>
                     </div>
                     <div className="flex">
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            MATHEMATICS
+                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={materialscience}>
+                            MATERIAL SCIENCE
                         </Button>
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            ENGLISH
-                        </Button>
-                    </div>
-                    <div className="flex">
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            PROGRAMMING
-                        </Button>
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            ELECTRICAL
+                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={python}>
+                            PYTHON
                         </Button>
                     </div>
                     <div className="flex">
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            ENVIRONMENTAL
+                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={de}>
+                            DE
                         </Button>
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl">
-                            APTITUDE
+                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={questions}>
+                            QUESTIONS
                         </Button>
                     </div>
                 </div>
