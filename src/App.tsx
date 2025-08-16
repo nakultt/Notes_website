@@ -53,41 +53,48 @@ function HomePage() {
     <div>
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold mt-10">SEM NOTES</h1>
-        <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-114 w-81 rounded-[35px] m-9 ">
+        <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-116 w-87 rounded-[35px] m-9 ">
           <div className="flex">
-            <Button className="moving-border-card m-5 p-8" onClick={sem1}>
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem1}>
               SEM 1
             </Button>
-            <Button className="moving-border-card m-5 p-8" onClick={sem2}>
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem2}>
               SEM 2
             </Button>
           </div>
           <div className="flex">
-            <Button className="moving-border-card m-5 p-8" onClick={sem3}>
-              SEM 3
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem3}>
+              SEM 3 (!)
             </Button>
-            <Button className="moving-border-card m-5 p-8" onClick={sem4}>
-              SEM 4
-            </Button>
-          </div>
-          <div className="flex">
-            <Button className="moving-border-card m-5 p-8" onClick={sem5}>
-              SEM 5
-            </Button>
-            <Button className="moving-border-card m-5 p-8" onClick={sem6}>
-              SEM 6
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem4}>
+              SEM 4 (!)
             </Button>
           </div>
           <div className="flex">
-            <Button className="moving-border-card m-5 p-8" onClick={sem7}>
-              SEM 7
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem5}>
+              SEM 5 (!)
             </Button>
-            <Button className="moving-border-card m-5 p-8" onClick={sem8}>
-              SEM 8
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem6}>
+              SEM 6 (!)
+            </Button>
+          </div>
+          <div className="flex">
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem7}>
+              SEM 7 (!)
+            </Button>
+            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem8}>
+              SEM 8 (!)
             </Button>
           </div>
         </div>
         <div className="flex flex-col m-3 mb-12 justify-center items-center mt-10">
+          <h2 className="text-2xl font-bold m-0">Information</h2>
+          <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-70 w-87 rounded-[35px] m-6 p-5">
+            <p style={{ textAlign: "justify" }}>These notes are sourced from official teachers in 2024, while the question papers have been collected from the library and seniors. Semester 1 materials are applicable to the entire college. Semester 2 materials are specific to the AD department. Currently, only Semester 1 and Semester 2 resources are available, other Semesters will be added soon.</p>
+          </div>
+        </div>
+        
+        <div className="flex flex-col m-3 mb-12 justify-center items-center mt-10 hidden">
           <h2 className="text-2xl font-bold m-3">Contact Developer</h2>
           <div className="flex flex-row">
             <Button className="bg-indigo-700 m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={discord}>Discord</Button>
