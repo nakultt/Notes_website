@@ -95,7 +95,7 @@ function HomePage() {
           </div>
         </div>
         
-        <div className="flex flex-col m-3 mb-12 justify-center items-center mt-10 hidden">
+        <div className="flex flex-col m-3 mb-12 justify-center items-center mt-10">
           <h2 className="text-2xl font-bold m-3">Contact Developer</h2>
           <div className="flex flex-row">
             <Button className="bg-indigo-700 m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={discord}>Discord</Button>
