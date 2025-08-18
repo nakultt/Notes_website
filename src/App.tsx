@@ -91,12 +91,12 @@ function HomePage() {
         <div className="flex flex-col justify-center items-center mt-10">
           <h2 className="text-2xl font-bold m-0">Information</h2>
           <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-75 w-87 rounded-[35px] m-6 p-5">
-            <p style={{ textAlign: "justify" }}>These notes are sourced from official teachers in 2024, while the question papers have been collected from the library and seniors. Semester question papers cant be public, refer library for question papers. Semester 1 materials are applicable to the entire college. Semester 2 materials are specific to the AD department. Currently, only Semester 1 and Semester 2 resources are available, other Semesters will be added soon.</p>
+            <p style={{ textAlign: "justify" }}>These notes are sourced from official teachers in 2024, while the question papers have been collected from the library and seniors. Question papers can't be public, refer library for question papers. Semester 1 materials are applicable to the entire college. Semester 2 materials are specific to the AD department. Currently, only Semester 1 and Semester 2 resources are available, other Semesters will be added soon.</p>
           </div>
         </div>
 
         <div className="flex flex-col mb-12 justify-center items-center mt-10">
-          <h2 className="text-2xl font-bold m-3">Contact Developer</h2>
+          <h2 className="text-2xl font-bold m-3">Say Hi to Developer</h2>
           <div className="flex flex-row">
             <Button className="bg-indigo-700 m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={discord}>Discord</Button>
             <Button className="bg-blue-600 m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={linkedin}>LinkedIn</Button>
