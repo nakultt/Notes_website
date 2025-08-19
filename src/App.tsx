@@ -39,51 +39,45 @@ function HomePage() {
   }
 
   const discord = () => {
-    window.location.href = "https://discord.gg/TY8f2xAb";
+    window.open("https://discord.gg/TY8f2xAb");
   }
 
   const linkedin = () => {
-    window.location.href = "https://www.linkedin.com/in/nakul-t-a222a7328 ";
+    window.open("https://www.linkedin.com/in/nakul-t-a222a7328 ");
   }
 
   const instagram = () => {
-    window.location.href = "https://www.instagram.com/nxkxlt";
+    window.open("https://www.instagram.com/nxkxlt");
   }
   
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold mt-10">SEM NOTES</h1>
-        <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-116 w-87 rounded-[35px] m-9 ">
-          <div className="flex">
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem1}>
+        <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 rounded-[35px] m-9 p-6">
+          <div className="grid grid-cols-2 gap-4 w-full">
+            <Button className="moving-border-card p-8 w-full" onClick={sem1}>
               SEM 1
             </Button>
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem2}>
+            <Button className="moving-border-card p-8 w-full" onClick={sem2}>
               SEM 2
             </Button>
-          </div>
-          <div className="flex">
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem3}>
+            <Button className="moving-border-card p-8 w-full" onClick={sem3}>
               SEM 3 (!)
             </Button>
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem4}>
+            <Button className="moving-border-card p-8 w-full" onClick={sem4}>
               SEM 4 (!)
             </Button>
-          </div>
-          <div className="flex">
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem5}>
+            <Button className="moving-border-card p-8 w-full" onClick={sem5}>
               SEM 5 (!)
             </Button>
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem6}>
+            <Button className="moving-border-card p-8 w-full" onClick={sem6}>
               SEM 6 (!)
             </Button>
-          </div>
-          <div className="flex">
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem7}>
+            <Button className="moving-border-card p-8 w-full" onClick={sem7}>
               SEM 7 (!)
             </Button>
-            <Button className="moving-border-card m-5 p-8 w-31" onClick={sem8}>
+            <Button className="moving-border-card p-8 w-full" onClick={sem8}>
               SEM 8 (!)
             </Button>
           </div>

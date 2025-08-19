@@ -25,28 +25,24 @@ function Sem2 () {
         <div>
             <div className="flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-bold m-3 mt-10">SEM 2 NOTES</h1>
-                <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 h-93 w-110 rounded-[35px] m-9">
-                    <div className="flex">
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={algebra}>
+                <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 rounded-[35px] m-9 p-6">
+                    <div className="flex flex-col md:grid md:grid-cols-2 gap-4 w-full">
+                        <Button className="moving-border-card p-8 w-full" onClick={algebra}>
                             ALGEBRA
                         </Button>
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={evs}>
+                        <Button className="moving-border-card p-8 w-full" onClick={evs}>
                             EVS
                         </Button>
-                    </div>
-                    <div className="flex">
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={materialscience}>
+                        <Button className="moving-border-card p-8 w-full" onClick={materialscience}>
                             MATERIAL SCIENCE
                         </Button>
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={python}>
+                        <Button className="moving-border-card p-8 w-full" onClick={python}>
                             PYTHON
                         </Button>
-                    </div>
-                    <div className="flex">
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={de}>
+                        <Button className="moving-border-card p-8 w-full" onClick={de}>
                             DE
                         </Button>
-                        <Button className="moving-border-card bg-gray-600 m-5 p-8 w-40 rounded-2xl" onClick={questions}>
+                        <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={questions}>
                             QUESTIONS
                         </Button>
                     </div>
