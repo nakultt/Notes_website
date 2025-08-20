@@ -42,7 +42,7 @@ function Sem2 () {
                         <Button className="moving-border-card p-8 w-full" onClick={de}>
                             DE
                         </Button>
-                        <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={questions}>
+                        <Button className="moving-border-card p-8 w-full" onClick={questions}>
                             QUESTIONS
                         </Button>
                     </div>
