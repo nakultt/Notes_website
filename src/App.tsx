@@ -9,6 +9,8 @@ import Sem5 from "./sems/sem5"
 import Sem6 from "./sems/sem6"
 import Sem7 from "./sems/sem7"
 import Sem8 from "./sems/sem8"
+import Login from "./login_page"
+import Register from "./register_page";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -117,6 +119,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
         <Route path="/sem1" element={<Sem1 />}></Route>
         <Route path="/sem2" element={<Sem2 />}></Route>
         <Route path="/sem3" element={<Sem3 />}></Route>
