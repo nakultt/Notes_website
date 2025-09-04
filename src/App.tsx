@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react"
 import { Button } from "./components/ui/button"
+import { useState } from "react"
 import {BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"
 import Sem1 from "./sems/sem1"
 import Sem2 from "./sems/sem2"
@@ -12,8 +13,11 @@ import Sem8 from "./sems/sem8"
 import Login from "./login_page"
 import Register from "./register_page";
 
+
 function HomePage() {
   const navigate = useNavigate();
+
+  const [isHovered, setIsHovered] = useState(false)
 
   const sem1 = () => {
     navigate('/sem1');
@@ -40,22 +44,49 @@ function HomePage() {
     navigate('/sem8');
   }
 
+  const login = () => {
+    navigate('/login')
+  }
+  const logout = () => {
+    localStorage.removeItem("token")
+    localStorage.removeItem("email")
+    navigate('/')
+  }
+
   const discord = () => {
     window.open("https://discord.gg/TY8f2xAb");
   }
-
   const linkedin = () => {
     window.open("https://www.linkedin.com/in/nakul-t-a222a7328 ");
   }
-
   const instagram = () => {
     window.open("https://www.instagram.com/nxkxlt");
   }
+  const loggedIn = !!localStorage.getItem("token")
   
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold mt-10">SEM NOTES</h1>
+        <div className="self-end" 
+             onMouseEnter={() => setIsHovered(true)} 
+             onMouseLeave={() => setIsHovered(false)}>
+
+          <Button className="bg-[#da8300]  mt-[15px] w-40"
+                  onClick={loggedIn ? undefined : login} >
+            {loggedIn ? "Logged in" : "Login"} 
+          </Button>
+
+          <div className="absolute w-full h-3"></div>
+
+          {isHovered && loggedIn && ( 
+            <div className="absolute right-0 mt-3 flex flex-col justify-center bg-neutral-800 border-3 border-yellow-800 rounded-[17px] p-3">
+              <p className="text-sm">{localStorage.getItem("email")}</p>
+              <Button className="mt-2 bg-red-500 text-white" onClick={logout}>Logout</Button>
+            </div>
+          )}
+        </div>
+
+        <h1 className="text-4xl font-bold ">SEM NOTES</h1>
         <div className="flex flex-col items-center justify-center bg-neutral-800 border-3 border-yellow-800 rounded-[35px] m-9 p-6">
           <div className="grid grid-cols-2 gap-4 w-full">
             <Button className="moving-border-card p-8 w-full" onClick={sem1}>

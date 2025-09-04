@@ -12,7 +12,8 @@ const Logins = async (email:string , password: string) => {
       },
     }
   )
-  localStorage.setItem("token",response.data.token)
+  localStorage.setItem("token", response.data.token)
+  localStorage.setItem("email", email)
 
   return response.data
 }
