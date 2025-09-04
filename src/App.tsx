@@ -79,7 +79,7 @@ function HomePage() {
           <div className="absolute w-full h-3"></div>
 
           {isHovered && loggedIn && ( 
-            <div className="absolute right-0 mt-3 flex flex-col justify-center bg-neutral-800 border-3 border-yellow-800 rounded-[17px] p-3">
+            <div className="absolute w-40 right-0 mt-3 flex flex-col justify-center bg-neutral-800 border-3 border-yellow-800 rounded-[17px] p-3">
               <p className="text-sm">{localStorage.getItem("email")}</p>
               <Button className="mt-2 bg-red-500 text-white" onClick={logout}>Logout</Button>
             </div>
