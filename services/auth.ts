@@ -5,7 +5,7 @@ const API_URL="http://localhost:5173"
 const Logins = async (email:string , password: string) => {
   const response = await axios.post(
     `${API_URL}/login`,
-    {email,password},
+    {email, password},
     {
       headers: {
         "Content-Type": "application/json",
@@ -17,4 +17,19 @@ const Logins = async (email:string , password: string) => {
   return response.data
 }
 
-export default Logins
+const Registers = async (email: string, password: string) => {
+  const response = await axios.post(
+    `${API_URL}/register`,
+    {email, password},
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
+
+  return response.data
+}
+
+export {Logins}
+export {Registers}
