@@ -4,7 +4,7 @@ const API_URL = "https://notes-backend-t6y3.onrender.com";
 
 export const getFeedback = async () => {
   const response = await axios.get(
-    `${API_URL}/feedback`
+    `${API_URL}/api/feedback`
   )
   return response.data
 }
@@ -12,7 +12,7 @@ export const getFeedback = async () => {
 export const postLike = async () => {
   const token = localStorage.getItem("token");
   const response = await axios.post(
-    `${API_URL}/feedback/like`,
+    `${API_URL}/api/feedback/like`,
     {
       headers: {
         Authorization: `Bearer ${token}`
@@ -26,7 +26,7 @@ export const postLike = async () => {
 export const postDislike = async () => {
   const token = localStorage.getItem("token");
   const response = await axios.post(
-    `${API_URL}/feedback/dislike`,
+    `${API_URL}/api/feedback/dislike`,
     {
       headers: {
         Authorization: `Bearer ${token}`
