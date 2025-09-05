@@ -87,8 +87,7 @@ function HomePage() {
       alert("Login to Vote")
       return
     }
-    if(userVote !== null){
-      alert("Already Voted")
+    if (userVote === "like") {
       return
     }
 
@@ -108,9 +107,8 @@ function HomePage() {
       alert("Login to Vote")
       return
     }
-    if(userVote !== null){
-      alert("Already Voted")
-      return
+    if (userVote === "dislike") {
+      return 
     }
 
     try{
@@ -195,10 +193,10 @@ function HomePage() {
         </div>
 
         <div className="flex gap-4">
-          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleLike} disabled={userVote !== null}>
+          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleLike}>
             <ThumbsUp fill={userVote === "like" ? "currentColor" : "none"} />
           </Button>
-          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleDislike} disabled={userVote !== null}>
+          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleDislike}>
             <ThumbsDown fill={userVote === "dislike" ? "currentColor" : "none"} />
           </Button>
         </div>
