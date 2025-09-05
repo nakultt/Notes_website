@@ -13,6 +13,7 @@ export const postLike = async () => {
   const token = localStorage.getItem("token");
   const response = await axios.post(
     `${API_URL}/api/feedback/like`,
+    {},
     {
       headers: {
         Authorization: `Bearer ${token}`
@@ -27,6 +28,7 @@ export const postDislike = async () => {
   const token = localStorage.getItem("token");
   const response = await axios.post(
     `${API_URL}/api/feedback/dislike`,
+    {},
     {
       headers: {
         Authorization: `Bearer ${token}`
