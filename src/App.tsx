@@ -1,7 +1,8 @@
 import { Analytics } from "@vercel/analytics/react"
 import { Button } from "./components/ui/button"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"
+import { ThumbsUp, ThumbsDown } from "lucide-react"
 import Sem1 from "./semesters/sem1"
 import Sem2 from "./semesters/sem2"
 import Sem3 from "./semesters/sem3"
@@ -12,12 +13,17 @@ import Sem7 from "./semesters/sem7"
 import Sem8 from "./semesters/sem8"
 import Login from "./pages/login_page"
 import Register from "./pages/register_page";
+import { getFeedback, postLike, postDislike } from "./services/feedback"
 
 
 function HomePage() {
   const navigate = useNavigate();
 
   const [isHovered, setIsHovered] = useState(false)
+  const [likes, setLikes] = useState(0)
+  const [dislikes, setDislikes] = useState(0);
+  const [hasVoted, setHasVoted] = useState(false);
+  const [userVote, setUserVote] = useState<string | null>(null)
 
   const sem1 = () => {
     navigate('/sem1');
@@ -62,6 +68,74 @@ function HomePage() {
   const instagram = () => {
     window.open("https://www.instagram.com/nxkxlt");
   }
+
+  useEffect(() => {
+    const fetchFeedback = async () => {
+      try {
+        const data = await getFeedback();
+        setLikes(data.likes)
+        setDislikes(data.dislikes)
+      } catch (error) {
+        console.error("Failed to fetch feedback:", error)
+      }
+    }
+    fetchFeedback()
+
+    const voted = localStorage.getItem("hasVoted");
+    if (voted) {
+      setHasVoted(true);
+      const vote = localStorage.getItem("vote")
+      setUserVote(vote)
+    }
+    
+  }, [])
+
+  const handleLike = async () => {
+    if (!loggedIn) {
+      alert("Login to Vote")
+      return
+    }
+    if(hasVoted){
+      alert("Already Voted")
+    }
+
+    try{
+      const data = await postLike()
+      setLikes(data.likes)
+      setDislikes(data.dislikes)
+      setHasVoted(true)
+      setUserVote("like")
+
+      localStorage.setItem("hasVoted", "true")
+      localStorage.setItem("vote", "like")
+    } catch (error){
+      console.error("Failed to like:",error)
+    }
+  }
+
+  const handleDislike = async () => {
+    if (!loggedIn) {
+      alert("Login to Vote")
+      return
+    }
+    if(hasVoted){
+      alert("Already Voted")
+    }
+
+    try{
+      const data = await postDislike()
+      setLikes(data.likes)
+      setDislikes(data.dislikes)
+      setHasVoted(true)
+      setUserVote("dislike")
+
+      localStorage.setItem("hasVoted", "true")
+      localStorage.setItem("vote", "dislike")
+    } catch (error){
+      console.error("Failed to dislike:",error)
+    }
+  }
+  
   const loggedIn = !!localStorage.getItem("token")
   
   return (
@@ -132,7 +206,20 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="flex flex-col mb-12 justify-center items-center mt-10">
+        <div className="flex gap-4">
+          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleLike}>
+            <ThumbsUp fill={userVote === "like" ? "currentColor" : "none"} />
+          </Button>
+          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleDislike}>
+            <ThumbsDown fill={userVote === "dislike" ? "currentColor" : "none"} />
+          </Button>
+        </div>
+        <div className="flex gap-0 mt-2">
+        <p className="mr-15">Likes: {likes}</p>
+        <p className="ml-15">Dislikes: {dislikes}</p>
+      </div>
+
+        <div className="flex flex-col mb-12 justify-center items-center mt-8">
           <h2 className="text-2xl font-bold m-3">Say Hi to the Developer</h2>
           <div className="flex flex-row">
             <Button className="bg-indigo-700 m-2 w-25 rounded-[15px] p-6 border-3 border-white" onClick={discord}>Discord</Button>

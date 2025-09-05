@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL="https://notes-backend-t6y3.onrender.com"
+const API_URL = "https://notes-backend-t6y3.onrender.com"
 
 const Logins = async (email:string , password: string) => {
   const response = await axios.post(
@@ -33,4 +33,4 @@ const Registers = async (email: string, password: string) => {
 }
 
 export {Logins}
-export {Registers}
+export {Registers} 
