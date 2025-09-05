@@ -2,16 +2,16 @@ import { Analytics } from "@vercel/analytics/react"
 import { Button } from "./components/ui/button"
 import { useState } from "react"
 import {BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"
-import Sem1 from "./sems/sem1"
-import Sem2 from "./sems/sem2"
-import Sem3 from "./sems/sem3"
-import Sem4 from "./sems/sem4"
-import Sem5 from "./sems/sem5"
-import Sem6 from "./sems/sem6"
-import Sem7 from "./sems/sem7"
-import Sem8 from "./sems/sem8"
-import Login from "./login_page"
-import Register from "./register_page";
+import Sem1 from "./semesters/sem1"
+import Sem2 from "./semesters/sem2"
+import Sem3 from "./semesters/sem3"
+import Sem4 from "./semesters/sem4"
+import Sem5 from "./semesters/sem5"
+import Sem6 from "./semesters/sem6"
+import Sem7 from "./semesters/sem7"
+import Sem8 from "./semesters/sem8"
+import Login from "./pages/login_page"
+import Register from "./pages/register_page";
 
 
 function HomePage() {

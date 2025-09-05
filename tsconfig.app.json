@@ -27,5 +27,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/login_page.tsx"]
+  "include": ["src", "src/pages/login_page.tsx"]
 }
