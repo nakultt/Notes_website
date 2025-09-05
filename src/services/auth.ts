@@ -4,7 +4,7 @@ const API_URL="http://localhost:5173"
 
 const Logins = async (email:string , password: string) => {
   const response = await axios.post(
-    `${API_URL}/login`,
+    `${API_URL}/auth/login`,
     {email, password},
     {
       headers: {
@@ -13,14 +13,14 @@ const Logins = async (email:string , password: string) => {
     }
   )
   localStorage.setItem("token", response.data.token)
-  localStorage.setItem("email", email)
+  localStorage.setItem("email", response.data.email)
 
   return response.data
 }
 
 const Registers = async (email: string, password: string) => {
   const response = await axios.post(
-    `${API_URL}/register`,
+    `${API_URL}/auth/register`,
     {email, password},
     {
       headers: {
