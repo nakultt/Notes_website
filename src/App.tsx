@@ -22,7 +22,6 @@ function HomePage() {
   const [isHovered, setIsHovered] = useState(false)
   const [likes, setLikes] = useState(0)
   const [dislikes, setDislikes] = useState(0);
-  const [hasVoted, setHasVoted] = useState(false);
   const [userVote, setUserVote] = useState<string | null>(null)
 
   const sem1 = () => {
@@ -75,19 +74,12 @@ function HomePage() {
         const data = await getFeedback();
         setLikes(data.likes)
         setDislikes(data.dislikes)
+        setUserVote(data.userVote)
       } catch (error) {
         console.error("Failed to fetch feedback:", error)
       }
     }
     fetchFeedback()
-
-    const voted = localStorage.getItem("hasVoted");
-    if (voted) {
-      setHasVoted(true);
-      const vote = localStorage.getItem("vote")
-      setUserVote(vote)
-    }
-    
   }, [])
 
   const handleLike = async () => {
@@ -95,19 +87,17 @@ function HomePage() {
       alert("Login to Vote")
       return
     }
-    if(hasVoted){
+    if(userVote !== null){
       alert("Already Voted")
+      return
     }
 
     try{
-      const data = await postLike()
+      await postLike()
+      const data = await getFeedback()
       setLikes(data.likes)
       setDislikes(data.dislikes)
-      setHasVoted(true)
-      setUserVote("like")
-
-      localStorage.setItem("hasVoted", "true")
-      localStorage.setItem("vote", "like")
+      setUserVote(data.userVote)
     } catch (error){
       console.error("Failed to like:",error)
     }
@@ -118,19 +108,17 @@ function HomePage() {
       alert("Login to Vote")
       return
     }
-    if(hasVoted){
+    if(userVote !== null){
       alert("Already Voted")
+      return
     }
 
     try{
-      const data = await postDislike()
+      await postDislike()
+      const data = await getFeedback()
       setLikes(data.likes)
       setDislikes(data.dislikes)
-      setHasVoted(true)
-      setUserVote("dislike")
-
-      localStorage.setItem("hasVoted", "true")
-      localStorage.setItem("vote", "dislike")
+      setUserVote(data.userVote)
     } catch (error){
       console.error("Failed to dislike:",error)
     }
@@ -207,10 +195,10 @@ function HomePage() {
         </div>
 
         <div className="flex gap-4">
-          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleLike}>
+          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleLike} disabled={userVote !== null}>
             <ThumbsUp fill={userVote === "like" ? "currentColor" : "none"} />
           </Button>
-          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleDislike}>
+          <Button className="moving-border-card mt-8 w-40 h-15" onClick={handleDislike} disabled={userVote !== null}>
             <ThumbsDown fill={userVote === "dislike" ? "currentColor" : "none"} />
           </Button>
         </div>

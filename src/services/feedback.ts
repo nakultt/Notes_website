@@ -3,8 +3,14 @@ import axios from "axios"
 const API_URL = "https://notes-backend-t6y3.onrender.com";
 
 export const getFeedback = async () => {
+  const token = localStorage.getItem("token");
   const response = await axios.get(
-    `${API_URL}/api/feedback`
+    `${API_URL}/api/feedback`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
   )
   return response.data
 }
