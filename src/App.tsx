@@ -62,7 +62,7 @@ function HomePage() {
     window.open("https://discord.gg/TY8f2xAb");
   }
   const linkedin = () => {
-    window.open("https://www.linkedin.com/in/nakul-t-a222a7328 ");
+    window.open("https://www.linkedin.com/in/nakult ");
   }
   const instagram = () => {
     window.open("https://www.instagram.com/nxkxlt");
