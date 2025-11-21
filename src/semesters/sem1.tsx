@@ -19,6 +19,9 @@ function Sem1 () {
     const ccodes = () => {
         window.open("https://drive.google.com/drive/folders/1mSoeyquA-7L9a7I2Eap7bBDOogD_K3jL", "_blank");
     };
+    const beeeassignment = () => {
+        window.open("https://drive.google.com/drive/folders/1twCpK3j5xVy3mdFj4jp_oMzf5P6EYkXm", "_blank");
+    };
     const mathscodes = () => {
         window.open("https://drive.google.com/drive/folders/1YjLbb94eDC3cw-CyDYq3Q_XtRBiwg2r2", "_blank");
     };
@@ -46,6 +49,9 @@ function Sem1 () {
                         </Button>
                         <Button className="moving-border-card p-8 w-full" onClick={mathscodes}>
                             Maths MATLAB Codes
+                        </Button>
+                        <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={beeeassignment}>
+                            BEEE Assignment
                         </Button>
                         <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={questions}>
                             QUESTION BANK
