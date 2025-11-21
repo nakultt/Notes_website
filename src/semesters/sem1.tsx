@@ -19,6 +19,9 @@ function Sem1 () {
     const ccodes = () => {
         window.open("https://drive.google.com/drive/folders/1mSoeyquA-7L9a7I2Eap7bBDOogD_K3jL", "_blank");
     };
+    const mathscodes = () => {
+        window.open("https://drive.google.com/drive/folders/1YjLbb94eDC3cw-CyDYq3Q_XtRBiwg2r2", "_blank");
+    };
 
     return (
         <div>
@@ -38,11 +41,14 @@ function Sem1 () {
                         <Button className="moving-border-card p-8 w-full" onClick={c}>
                             C
                         </Button>
-                        <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={questions}>
-                            QUESTIONS
-                        </Button>
-                        <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={ccodes}>
+                        <Button className="moving-border-card p-8 w-full" onClick={ccodes}>
                             C Programming Codes
+                        </Button>
+                        <Button className="moving-border-card p-8 w-full" onClick={mathscodes}>
+                            Maths MATLAB Codes
+                        </Button>
+                        <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={questions}>
+                            QUESTION BANK
                         </Button>
                     </div>
                 </div>
