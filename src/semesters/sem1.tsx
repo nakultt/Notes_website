@@ -16,6 +16,9 @@ function Sem1 () {
     const questions = () => {
         window.open("https://drive.google.com/drive/u/1/folders/1ba7UswpoKbuZC5mitW9w6O0U-Y0QYHLD", "_blank");
     };
+    const ccodes = () => {
+        window.open("https://drive.google.com/drive/folders/1mSoeyquA-7L9a7I2Eap7bBDOogD_K3jL", "_blank");
+    };
 
     return (
         <div>
@@ -37,6 +40,9 @@ function Sem1 () {
                         </Button>
                         <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={questions}>
                             QUESTIONS
+                        </Button>
+                        <Button className="moving-border-card p-8 w-full md:col-span-2" onClick={ccodes}>
+                            C Programming Codes
                         </Button>
                     </div>
                 </div>
